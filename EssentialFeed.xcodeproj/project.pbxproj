@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		9DCA10AB277C30F800DE8DB7 /* EssentialFeed.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA10AA277C30F800DE8DB7 /* EssentialFeed.docc */; };
 		9DCA10B1277C30F800DE8DB7 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DCA10A6277C30F800DE8DB7 /* EssentialFeed.framework */; };
-		9DCA10B6277C30F800DE8DB7 /* EssentialFeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA10B5277C30F800DE8DB7 /* EssentialFeedTests.swift */; };
 		9DCA10B7277C30F800DE8DB7 /* EssentialFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DCA10A9277C30F800DE8DB7 /* EssentialFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9DCA10C1277C38CD00DE8DB7 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA10C0277C38CD00DE8DB7 /* FeedLoader.swift */; };
 		9DCA10C3277C390400DE8DB7 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA10C2277C390400DE8DB7 /* FeedItem.swift */; };
+		9DCA10C5277C3A5D00DE8DB7 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DCA10C4277C3A5D00DE8DB7 /* RemoteFeedLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +30,9 @@
 		9DCA10A9277C30F800DE8DB7 /* EssentialFeed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EssentialFeed.h; sourceTree = "<group>"; };
 		9DCA10AA277C30F800DE8DB7 /* EssentialFeed.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentialFeed.docc; sourceTree = "<group>"; };
 		9DCA10B0277C30F800DE8DB7 /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DCA10B5277C30F800DE8DB7 /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		9DCA10C0277C38CD00DE8DB7 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		9DCA10C2277C390400DE8DB7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		9DCA10C4277C3A5D00DE8DB7 /* RemoteFeedLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		9DCA10B4277C30F800DE8DB7 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				9DCA10B5277C30F800DE8DB7 /* EssentialFeedTests.swift */,
+				9DCA10C4277C3A5D00DE8DB7 /* RemoteFeedLoaderTests.swift */,
 			);
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
@@ -156,6 +156,7 @@
 					};
 					9DCA10AF277C30F800DE8DB7 = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
 					};
 				};
 			};
@@ -210,7 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DCA10B6277C30F800DE8DB7 /* EssentialFeedTests.swift in Sources */,
+				9DCA10C5277C3A5D00DE8DB7 /* RemoteFeedLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,14 +407,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8F5DW7M84;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emirates.EssentialFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -422,10 +430,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R8F5DW7M84;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.emirates.EssentialFeedTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
